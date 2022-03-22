@@ -1,33 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
 import "bootstrap/dist/css/bootstrap.min.css";
+import { Routes, Route } from "react-router-dom";
 import Navbar from './components/Navbar.js';
+import Home from "./components/Home.js";
+import Resume from "./components/Resume.js";
+import Projects from "./components/Projects.js";
 
 function App() {
   return (
     <div className="App">
       <Navbar />
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <div className="container-fluid">
-          <div className='row'>
-            <div className='col'>
-              <button type="button" class="btn btn-primary">Primary</button>
-            </div>
-          </div>
-        </div>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Routes>
+        <Route path="/" element={ <Home /> } />
+        <Route path="/Resume" element={ <Resume /> } />
+        <Route path="/Projects" element={ <Projects /> } />
+      </Routes>     
     </div>
   );
 }
